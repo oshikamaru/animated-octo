@@ -44,6 +44,13 @@ function Ground(color, size_x, size_y, nb_tile)
     minY = -(size_y/2);
     maxY = (size_y/2);
 
+    tmpGround = new THREE.Mesh(
+        new THREE.PlaneGeometry(sizeOfTileX-10, sizeOfTileY-10),
+        new THREE.MeshLambertMaterial({color: color, transparent: true, opacity: 0.6}));
+        tmpGround.position.x = 60;
+        tmpGround.position.y = 0;
+        scene.add(tmpGround);
+
     for (x = minX; x <= maxX; x = x+sizeOfTileX){
         for (y = minY; y <= maxY; y = y+sizeOfTileY){
 
@@ -62,6 +69,10 @@ function Ground(color, size_x, size_y, nb_tile)
                 noGround.push([x, y]);
         }
     }
+}
+
+function find_tile(ground){
+    
 }
 
 function Light(name, color, position)
