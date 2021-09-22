@@ -19,6 +19,9 @@ function shoot()
         bullet.angle = player1.direction;
         player1.bullets.push(bullet);
         bulletTime1 = clock.getElapsedTime();
+
+        console.log(ennemy);
+        scene.remove(ennemy.graphic);
     } 
 
     // move bullets

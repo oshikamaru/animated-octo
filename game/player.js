@@ -21,6 +21,7 @@ var Player = function(name, color, position, direction) {
 };
 
 
+
 Player.prototype.dead = function () {
     this.graphic.position.z = this.graphic.position.z-0.1;
         //Nettoyage de la div container
