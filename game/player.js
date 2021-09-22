@@ -20,6 +20,7 @@ var Player = function(name, color, position, direction) {
     this.graphic.rotateOnAxis(new THREE.Vector3(0,0,1), this.direction+(3*Math.PI/2));
 };
 
+
 Player.prototype.dead = function () {
     this.graphic.position.z = this.graphic.position.z-0.1;
         //Nettoyage de la div container

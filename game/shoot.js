@@ -52,7 +52,6 @@ function bullet_collision()
             i--;
         }
     }
-
 }
 
 function player_collision()
