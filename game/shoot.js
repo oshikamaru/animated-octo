@@ -19,10 +19,8 @@ function shoot()
         bullet.angle = player1.direction;
         player1.bullets.push(bullet);
         bulletTime1 = clock.getElapsedTime();
-
-        console.log(ennemy);
-        scene.remove(ennemy.graphic);
     } 
+
 
     // move bullets
     var moveDistance = 5;
@@ -45,8 +43,17 @@ function collisions()
 function bullet_collision()
 {
     //collision between bullet and walls
+
     for (var i = 0; i < player1.bullets.length; i++)
     {
+        if (i == 0)
+        {
+            if (bullet.position.x < 0)
+                negx = true;
+            if (bullet.position.y < 0)
+                negy = true;
+        }
+
         if (Math.abs(player1.bullets[i].position.x) >= WIDTH / 2 ||
             Math.abs(player1.bullets[i].position.y) >= HEIGHT / 2)
         {
@@ -55,6 +62,11 @@ function bullet_collision()
             i--;
         }
     }
+}
+
+function check_collision(x, y)
+{
+    signx = x < 0;
 }
 
 function player_collision()
